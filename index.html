@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="PrompDojoは、生成AIを用いた全く新しいパーティゲームです。お題の画像に使われたプロンプトを推定し、最も似た画像を生成できたプレイヤーが勝利となります。"
+    />
+    <meta name="theme-color" content="#ffd60a" />
+    <meta property="og:title" content="PrompDojo" />
+    <meta
+      property="og:description"
+      content="Prompt engineering meets party game. 画像を見て、言葉に戻し、AIで描き直す対戦ゲーム。"
+    />
+    <meta
+      property="og:image"
+      content="https://haruk1y.github.io/prompdojo-project-page/assets/prompdojo-hero.png"
+    />
+    <title>PrompDojo | Project Page</title>
+    <link rel="stylesheet" href="styles.css?v=github-pages" />
+    <script src="script.js?v=github-pages" defer></script>
+  </head>
+  <body>
+    <main id="project" class="project-shell">
+      <section class="switcher" aria-label="PrompDojo project menu">
+        <div class="switcher__top">
+          <div class="brand-lockup">
+            <h1 class="project-title">PrompDojo</h1>
+            <div class="language-switch" aria-label="Language">
+              <button
+                class="language-switch__button is-active"
+                type="button"
+                aria-pressed="true"
+                data-lang-option="ja"
+              >
+                <img
+                  class="language-switch__flag"
+                  src="assets/vendor/circle-flags/jp.svg"
+                  alt=""
+                  width="24"
+                  height="24"
+                />
+                <span class="language-switch__code">JP</span>
+              </button>
+              <button
+                class="language-switch__button"
+                type="button"
+                aria-pressed="false"
+                data-lang-option="en"
+              >
+                <img
+                  class="language-switch__flag"
+                  src="assets/vendor/circle-flags/us.svg"
+                  alt=""
+                  width="24"
+                  height="24"
+                />
+                <span class="language-switch__code">EN</span>
+              </button>
+            </div>
+          </div>
+          <a
+            class="play-link"
+            href="https://gemini-hackathon.vercel.app"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span data-i18n="nav.play">ゲームを開く</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div
+          id="section-menu"
+          class="section-menu"
+          role="tablist"
+          aria-label="PrompDojo sections"
+        >
+          <button
+            id="tab-concept"
+            class="section-menu__item is-active"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="panel-concept"
+            data-section="concept"
+          >
+            OVERVIEW
+          </button>
+          <button
+            id="tab-how"
+            class="section-menu__item"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-how"
+            data-section="how"
+          >
+            HOW TO PLAY
+          </button>
+          <button
+            id="tab-team"
+            class="section-menu__item"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-team"
+            data-section="team"
+          >
+            ABOUT US
+          </button>
+        </div>
+
+        <div class="panel-stage">
+          <article
+            id="panel-concept"
+            class="content-panel is-active"
+            role="tabpanel"
+            aria-labelledby="tab-concept"
+            data-panel="concept"
+          >
+            <p class="eyebrow">Concept</p>
+            <h2 data-i18n="concept.title">AIで、もっとパーティー！</h2>
+            <p data-i18n="concept.body">
+              PrompDojoは、生成AIを用いた全く新しいパーティゲームです。お題の画像に使われたプロンプトを推定し、最も似た画像を生成できたプレイヤーが勝利となります。
+            </p>
+            <figure class="concept-visual">
+              <img
+                src="assets/prompdojo-overview.png"
+                alt="PrompDojo gameplay concept"
+                width="1536"
+                height="864"
+              />
+            </figure>
+          </article>
+
+          <article
+            id="panel-how"
+            class="content-panel"
+            role="tabpanel"
+            aria-labelledby="tab-how"
+            data-panel="how"
+            hidden
+          >
+            <p class="eyebrow">How To Play</p>
+            <h2 data-i18n="how.title">見る、書く、生成する</h2>
+            <ol class="play-steps">
+              <li>
+                <span class="step-icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" focusable="false">
+                    <path d="M4 24s7-12 20-12 20 12 20 12-7 12-20 12S4 24 4 24Z" />
+                    <circle cx="24" cy="24" r="6" />
+                  </svg>
+                </span>
+                <div class="step-copy">
+                  <strong data-i18n="how.step1.title">お題画像を見る</strong>
+                  <p data-i18n="how.step1.body">主題、背景、色、構図、画風...どれも欠かせない！</p>
+                </div>
+              </li>
+              <li>
+                <span class="step-icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" focusable="false">
+                    <path d="M10 36h7l20-20-7-7-20 20v7Z" />
+                    <path d="M26 13l7 7" />
+                    <path d="M9 41h30" />
+                  </svg>
+                </span>
+                <div class="step-copy">
+                  <strong data-i18n="how.step2.title">プロンプトを書く</strong>
+                  <p data-i18n="how.step2.body">見えた要素をAIが描きやすい言葉に変換しよう！</p>
+                </div>
+              </li>
+              <li>
+                <span class="step-icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" focusable="false">
+                    <rect x="8" y="12" width="24" height="24" rx="3" />
+                    <path d="M15 30l5-6 4 4 4-7 4 9" />
+                    <path d="M36 7v8" />
+                    <path d="M32 11h8" />
+                    <path d="M39 28v6" />
+                    <path d="M36 31h6" />
+                  </svg>
+                </span>
+                <div class="step-copy">
+                  <strong data-i18n="how.step3.title">AIで生成する</strong>
+                  <p data-i18n="how.step3.body">作成しよう！</p>
+                </div>
+              </li>
+              <li>
+                <span class="step-icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" focusable="false">
+                    <path d="M12 28l8 8 16-20" />
+                    <path d="M8 8h32v32H8z" />
+                  </svg>
+                </span>
+                <div class="step-copy">
+                  <strong data-i18n="how.step4.title">近さを比べる</strong>
+                  <p data-i18n="how.step4.body">お題画像に似ているほど高スコア！</p>
+                </div>
+              </li>
+            </ol>
+            <p class="play-note" data-i18n="how.modes.note">
+              5種のゲームモードが存在。続々と追加予定！
+            </p>
+          </article>
+
+          <article
+            id="panel-team"
+            class="content-panel"
+            role="tabpanel"
+            aria-labelledby="tab-team"
+            data-panel="team"
+            hidden
+          >
+            <p class="eyebrow">About Us</p>
+            <h2 data-i18n="team.title">開発メンバー</h2>
+            <p class="about-lead">
+              <span>
+                <a
+                  href="https://cerebralvalley.ai/e/gemini-3-tokyo-hackathon/hackathon/gallery"
+                  target="_blank"
+                  rel="noreferrer"
+                  data-i18n="about.hackathon.name"
+                >
+                  Gemini3 Hackathon Tokyo
+                </a>
+                <span data-i18n="about.hackathon.result">で70チーム中3位入賞</span>
+              </span>
+              <span>
+                <a
+                  href="https://ailab.supercell.com/japan"
+                  target="_blank"
+                  rel="noreferrer"
+                  data-i18n="about.lab.name"
+                >
+                  Supercell AI Innovation Lab Tokyo
+                </a>
+                <span data-i18n="about.lab.status">で開発中！</span>
+              </span>
+            </p>
+            <div class="team-grid">
+              <article class="team-card">
+                <img
+                  class="team-photo"
+                  src="assets/team/haruki-yajima.jpg"
+                  alt="Haruki Yajima"
+                  width="1500"
+                  height="843"
+                />
+                <div class="team-copy">
+                  <h3 data-i18n="team.haruki.name">矢島陽樹</h3>
+                  <p class="team-profile" data-i18n="team.profile">
+                    東京大学大学院
+                    情報理工学系研究科
+                    修士1年
+                  </p>
+                  <a
+                    class="linkedin-link"
+                    href="https://www.linkedin.com/in/haruki-yajima/"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Haruki Yajima LinkedIn"
+                  >
+                    LinkedIn
+                  </a>
+                </div>
+              </article>
+              <article class="team-card">
+                <img
+                  class="team-photo team-photo--portrait"
+                  src="assets/team/shuntaro-tokuda.jpg"
+                  alt="Shuntaro Tokuda"
+                  width="1125"
+                  height="1500"
+                />
+                <div class="team-copy">
+                  <h3 data-i18n="team.shuntaro.name">徳田俊太朗</h3>
+                  <p class="team-profile" data-i18n="team.profile">
+                    東京大学大学院
+                    情報理工学系研究科
+                    修士1年
+                  </p>
+                  <a
+                    class="linkedin-link"
+                    href="https://www.linkedin.com/in/shuntaro-tokuda-45b4703b2/"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Shuntaro Tokuda LinkedIn"
+                  >
+                    LinkedIn
+                  </a>
+                </div>
+              </article>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
