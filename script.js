@@ -2,7 +2,6 @@ const tabButtons = [...document.querySelectorAll("[data-section]")];
 const panels = [...document.querySelectorAll("[data-panel]")];
 const languageButtons = [...document.querySelectorAll("[data-lang-option]")];
 const translationTargets = [...document.querySelectorAll("[data-i18n]")];
-const youtubeEmbeds = [...document.querySelectorAll("[data-youtube-id]")];
 const metaDescription = document.querySelector('meta[name="description"]');
 const ogDescription = document.querySelector('meta[property="og:description"]');
 
@@ -64,41 +63,6 @@ const translations = {
       "First-year master's student\nGraduate School of Information Science and Technology\nThe University of Tokyo",
   },
 };
-
-youtubeEmbeds.forEach((embed) => {
-  const videoId = embed.dataset.youtubeId;
-  const thumbnail = embed.querySelector(".video-embed__thumbnail");
-  const button = embed.querySelector(".video-embed__button");
-
-  if (!videoId || !button) {
-    return;
-  }
-
-  if (thumbnail) {
-    thumbnail.addEventListener("error", () => {
-      if (thumbnail.dataset.fallback === "true") {
-        return;
-      }
-
-      thumbnail.dataset.fallback = "true";
-      thumbnail.src = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
-    });
-  }
-
-  button.addEventListener("click", () => {
-    const iframe = document.createElement("iframe");
-    iframe.className = "video-embed__iframe";
-    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-    iframe.title = embed.dataset.youtubeTitle || "YouTube video";
-    iframe.loading = "lazy";
-    iframe.referrerPolicy = "strict-origin-when-cross-origin";
-    iframe.allow =
-      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-    iframe.allowFullscreen = true;
-
-    embed.replaceChildren(iframe);
-  });
-});
 
 function selectPanel(section) {
   tabButtons.forEach((button) => {
